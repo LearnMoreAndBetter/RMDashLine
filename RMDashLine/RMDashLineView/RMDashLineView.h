@@ -18,3 +18,13 @@
 @interface RMDashLineLayerView : UIView
 
 @end
+
+//实线
+@interface RMLineView : UIView
+
+@end
+
+//分隔框
+@interface RMBlankView : UIView
+
+@end

@@ -8,6 +8,12 @@
 
 #import "RMDashLineView.h"
 
+//灰色
+#define  RM_GRAY_COLOR       [UIColor colorWithRed:138 / 255.0 green:138 / 255.0 blue:138 / 255.0 alpha:1]
+
+//线条颜色
+#define  RM_GRAY_LINE_COLOR     [UIColor colorWithRed:229 / 255.0  green:229 / 255.0  blue:229 / 255.0  alpha:1]
+
 @implementation RMDashLineView
 
 - (instancetype)initWithFrame:(CGRect)frame{
@@ -26,7 +32,7 @@
 	}else{
 		[line addLineToPoint:CGPointMake(0, CGRectGetHeight(rect))];
 	}
-	[[UIColor redColor] setStroke];
+	[RM_GRAY_COLOR setStroke];
 	CGFloat lengths[] = {3,3};
 	[line setLineDash:lengths count:2 phase:1];
 	[line stroke];
@@ -53,7 +59,7 @@
 	[shapeLayer setBounds:self.bounds];
 	[shapeLayer setPosition:CGPointMake(CGRectGetWidth(self.frame) / 2, CGRectGetHeight(self.frame)/2)];
 	
-	[shapeLayer setStrokeColor:[UIColor redColor].CGColor];
+	[shapeLayer setStrokeColor:RM_GRAY_COLOR.CGColor];
 	[shapeLayer setLineWidth:0.5];
 	//  设置线宽，线间距
 	[shapeLayer setLineDashPattern:@[@3,@3]];
@@ -73,3 +79,30 @@
 }
 
 @end
+
+
+@implementation RMLineView
+
+- (instancetype)initWithFrame:(CGRect)frame{
+	if (self = [super initWithFrame:frame]) {
+		self.backgroundColor = RM_GRAY_LINE_COLOR;
+		
+	}
+	return self;
+}
+
+@end
+
+
+@implementation RMBlankView
+
+- (instancetype)initWithFrame:(CGRect)frame{
+	if (self = [super initWithFrame:frame]) {
+		self.backgroundColor = [UIColor groupTableViewBackgroundColor];
+		
+	}
+	return self;
+}
+
+@end
+

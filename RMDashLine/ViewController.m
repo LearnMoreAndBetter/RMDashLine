@@ -22,13 +22,14 @@
 	[super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 	
-	self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+	self.view.backgroundColor = [UIColor whiteColor];
 	
 	
 	[self addDashLineView];
 }
 
 - (void)addDashLineView{
+	
 	RMDashLineView *line1 = [[RMDashLineView alloc]initWithFrame:CGRectMake(0, 100, APP_SCREEN_WIDTH, 1)];
 	[self.view addSubview:line1];
 
@@ -46,6 +47,13 @@
 	RMDashLineLayerView *line5 = [[RMDashLineLayerView alloc]init];
 	[self.view addSubview:line5];
 	line5.frame = CGRectMake(0, 200, APP_SCREEN_WIDTH, 1);
+	
+	RMLineView *line6 = [[RMLineView alloc]initWithFrame:CGRectMake(0, 300, APP_SCREEN_WIDTH, 1)];
+	[self.view addSubview:line6];
+	
+	RMBlankView *line7 = [[RMBlankView alloc]initWithFrame:CGRectMake(0, 400, APP_SCREEN_WIDTH, 10)];
+	[self.view addSubview:line7];
+	
 }
 
 
